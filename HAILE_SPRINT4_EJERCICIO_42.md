@@ -58,5 +58,5 @@ print(df.head())
   - Se solicitará su aplicación en el momento que los datos sean exportados a los archivos CSV de las actualizaciones, modificaciones e incorporaciones que hubieran durante el proyecto.
 - **Acceso Restringido:**
   - El acceso a los datos sensibles será restringido solo al personal autorizado y que necesite conocerlos para fines exclusivos al proyecto.
-- **Complimiento de las Regulaciones:**
+- **Cumplimiento de las Regulaciones:**
   - Cumplimento de la GDRP vigente.
