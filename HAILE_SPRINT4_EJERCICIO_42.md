@@ -15,7 +15,7 @@
 **Frecuencia de Recolección:**
 - Diaria
   
-**Scripts de Descàrrega:**
+**Scripts de Descarga:**
 
 ```python
 
