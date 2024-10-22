@@ -10,7 +10,7 @@
 ## 2. Métodos de recolección de datos
 
 **Procedimientos y Herramientas:**
-- Los Datos provienen de una exportació programada en formato CSV por el Departamento de Ingeniería de Datos, quienes se encargan de que los datos se obtengan de la manera más integral y buscando garantizar que sean enviados sin errores. El CSV se encuentra alojado en nube dentro de un repositorio privado de GitHub.
+- Los Datos provienen de una exportació programada en formato CSV por el Departamento de Ingeniería de Datos, quienes se encargan de que los datos se obtengan de la manera más integral y buscando garantizar que sean enviados sin errores. El CSV se encuentra alojado en los servidores locales de la entidad.
 
 **Frecuencia de Recolección:**
 - Diaria
