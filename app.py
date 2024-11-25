@@ -1,9 +1,6 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import sklearn
-from sklearn.preprocessing import LabelEncoder
-
 
 
 # Cargo el modelo y el escalador desde los archivos
