@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import sklearn
 
 # Cargo el modelo y el escalador desde los archivos
 with open('kmeans.pkl', 'rb') as model_file:
