@@ -4,10 +4,10 @@ import pandas as pd
 
 # Cargo el modelo y el escalador desde los archivos
 with open('kmeans.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+    model = pickle.load(kmeans, model_file)
 
 with open('scaler.pkl', 'rb') as scaler_file:
-    scaler = pickle.load(scaler_file)
+    scaler = pickle.load(scaler, scaler_file)
 
 # Título de la aplicación
 
