@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 import sklearn
+from sklearn.preprocessing import LabelEncoder
+
 
 
 # Cargo el modelo y el escalador desde los archivos
@@ -45,14 +47,14 @@ deposito = st.radio('Ha contratado depósito:', ['no', 'si'])
 # Creo un dataframe con los datos ingresados
 
 user_data = pd.DataFrame({
-        'edad':['edad'],
-        'trabajo':['trabajo'],
-        'estado_civil':['estado_civil'],
-        'educacion':['educacion'],
-        'saldo':['saldo'],
-        'hipoteca':['hipoteca'],
-        'prestamos':['prestamos'],
-        'deposito': ['deposito']
+        'edad':[edad],
+        'trabajo':[trabajo],
+        'estado_civil':[estado_civil],
+        'educacion':[educacion],
+        'saldo':[saldo],
+        'hipoteca':[hipoteca],
+        'prestamos':[prestamos],
+        'deposito': [deposito]
 })
 
 # Realizo Mapeo para las características hipoteca, prestamos, deposito
@@ -89,7 +91,7 @@ for feature in categorical_features:
 user_data = user_data.drop(columns=categorical_features, axis=1)
 
 required_columns = [
-    'edad', 'educacion', 'saldo', 'hipoteca', 'prestamos', 'depositos',
+    'edad', 'educacion', 'saldo', 'hipoteca', 'prestamos', 'deposito',
     'trabajo_encoded', 'estado_civil_encoded'
 ]
 
