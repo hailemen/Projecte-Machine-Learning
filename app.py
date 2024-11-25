@@ -1,5 +1,6 @@
 import streamlit as st
 import sklearn
+from sklearn import model_selection, svm
 import pickle
 import pandas as pd
 
