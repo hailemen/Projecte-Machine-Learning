@@ -20,7 +20,7 @@ st.header('Datos Demográficos del Cliente')
 
 edad = st.number_input('Edad:', min_value=18, max_value=100)
 
-trabajo = st.select_box('Tipo de Trabajo:',
+trabajo = st.selectbox('Tipo de Trabajo:',
                         ('Administración', 'Tecnico', 'Gerencia', 'Emprendedor',
                          'Autonomo', 'Obrero', 'Servicios', 'Hogar', 'Desempleado',
                          'Estudiante', 'Desconocido' ))
