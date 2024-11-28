@@ -1,6 +1,7 @@
 import streamlit as st
 import sklearn
 from sklearn import model_selection, svm
+from sklearn.preprocessing import LabelEncoder 
 import pickle
 import pandas as pd
 
@@ -85,7 +86,7 @@ label_encoders = {}
 for feature in categorical_features:
     label_encoders[feature] = LabelEncoder()
     
-    user_data[feature + "_encoded"] = label_encoders[feature].fit_transform(user_data[feature])
+    user_data[feature + "_encoded"] = pd.Series(label_encoders[feature].fit_transform(user_data[feature]))
 
 user_data = user_data.drop(columns=categorical_features, axis=1)
 
@@ -120,6 +121,6 @@ prediction = model.predict(user_data)
 st.header('Clasificación del cliente')
 
 # Accediendo al valor del diccionario usando la predicción como clave
-perfil = perfil_map.get(prediction, "Perfil no encontrado")
+perfil = perfil_map.get(prediction.item(), "Perfil no encontrado")
 
 st.success(f'El cliente pertenece al perfil: {perfil}')
