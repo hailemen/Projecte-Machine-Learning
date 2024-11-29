@@ -107,14 +107,15 @@ user_data = user_data[required_columns]
 scale_variable = ['edad', 'saldo']
 user_data[scale_variable] = scaler.transform(user_data[scale_variable])
 
-# Se realiza la predicción
+# Se establecen las categorías de salida
 perfil_map = {
-    0: "1: Profesionales Estables",
-    1: "2: Jóvenes Profesionales",
-    2: "3: Profesionales Altos Ingresos",
-    3: "4: Trabajadores Bajos Ingresos ",
+    0: "1: Línea de Productos Access Silver ",
+    1: "2: Línea de Productos Joven Flex",
+    2: "3: Línea de Productos Access Platinum",
+    3: "4: Linea de Productos Access Starter ",
 }
 
+# Se realiza la predicción
 prediction = model.predict(user_data)
 
 # Resultados de la predicción
