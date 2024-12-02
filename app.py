@@ -19,7 +19,7 @@ edad = st.number_input('Edad:', min_value=18, max_value=100)
 trabajo = st.selectbox('Tipo de Trabajo:',
                         ('Administración', 'Tecnico', 'Gerencia', 'Emprendedor',
                          'Autonomo', 'Obrero', 'Servicios', 'Hogar', 'Desempleado',
-                         'Estudiante', 'Desconocido'))
+                         'Estudiante', 'Jubilado' 'Desconocido'))
 estado_civil = st.radio('Estado Civil:', ['soltero', 'casado', 'divorciado'])
 educacion = st.radio('Educación:', ['primaria', 'media', 'superior'])
 
@@ -33,13 +33,13 @@ deposito = st.radio('Ha contratado depósito:', ['no', 'si'])
 # Creo un dataframe con los datos ingresados
 user_data = pd.DataFrame({
     'edad': [edad],
-    'trabajo': [trabajo],
-    'estado_civil': [estado_civil],
     'educacion': [educacion],
     'saldo': [saldo],
     'hipoteca': [hipoteca],
     'prestamos': [prestamos],
-    'deposito': [deposito]
+    'deposito': [deposito],
+    'trabajo': [trabajo],
+    'estado_civil': [estado_civil]
 })
 
 # Mapeo de valores categóricos
@@ -51,7 +51,7 @@ user_data['educacion'] = user_data['educacion'].map({'primaria': 1, 'media': 2, 
 trabajos = {'Administración': 'profesional', 'Tecnico': 'profesional',
             'Gerencia': 'profesional', 'Autonomo': 'profesional',
             'Obrero': 'manual', 'Servicios': 'manual', 'Hogar': 'manual',
-            'Desempleado': 'otro', 'Estudiante': 'otro', 'Desconocido': 'otro'}
+            'Desempleado': 'otro', 'Estudiante': 'otro', 'retirado': 'otro', 'Desconocido': 'otro'}
 user_data['trabajo'] = user_data['trabajo'].map(trabajos).fillna('otro')
 
 categorical_features = ["trabajo", "estado_civil"]
@@ -66,6 +66,7 @@ required_columns = [
     'edad', 'educacion', 'saldo', 'hipoteca', 'prestamos', 'deposito',
     'trabajo_encoded', 'estado_civil_encoded'
 ]
+
 for col in required_columns:
     if col not in user_data.columns:
         user_data[col] = 0
