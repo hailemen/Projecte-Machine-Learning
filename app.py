@@ -51,7 +51,7 @@ user_data['educacion'] = user_data['educacion'].map({'primaria': 1, 'media': 2, 
 trabajos = {'Administración': 'profesional', 'Tecnico': 'profesional',
             'Gerencia': 'profesional', 'Autonomo': 'profesional',
             'Obrero': 'manual', 'Servicios': 'manual', 'Hogar': 'manual',
-            'Desempleado': 'otro', 'Estudiante': 'otro', 'retirado': 'otro', 'Desconocido': 'otro'}
+            'Desempleado': 'otro', 'Estudiante': 'otro', 'Jubilado': 'retirado', 'Desconocido': 'otro'}
 user_data['trabajo'] = user_data['trabajo'].map(trabajos).fillna('otro')
 
 categorical_features = ["trabajo", "estado_civil"]
@@ -62,6 +62,11 @@ for feature in categorical_features:
 
 user_data = user_data.drop(columns=categorical_features, axis=1)
 
+
+# Estandarización
+scale_variable = ['edad', 'saldo']
+user_data[scale_variable] = scaler.transform(user_data[scale_variable])
+
 required_columns = [
     'edad', 'educacion', 'saldo', 'hipoteca', 'prestamos', 'deposito',
     'trabajo_encoded', 'estado_civil_encoded'
@@ -71,10 +76,6 @@ for col in required_columns:
     if col not in user_data.columns:
         user_data[col] = 0
 user_data = user_data[required_columns]
-
-# Estandarización
-scale_variable = ['edad', 'saldo']
-user_data[scale_variable] = scaler.transform(user_data[scale_variable])
 
 # Predicción
 perfil_map = {
