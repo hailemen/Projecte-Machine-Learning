@@ -83,10 +83,10 @@ user_data = user_data[required_columns]
 
 # Predicción
 perfil_map = {
-    0: "1: Línea Access: Cuentas de ahorro saldos altos, Planes de pensiones individuales, Seguros de vida o de protección familiar y Productos bancarios vinculados a la vivienda",
-    1: "2: Línea Joven Flex: Cuentas de ahorro con beneficios, Depósitos a corto plazo con flexibilidad, Préstamos personales con tasas bajas y Productos Bancarios Digitales",
+    0: "1: Línea Standard: Cuentas de ahorro saldos altos, Planes de pensiones individuales, Seguros de vida o de protección familiar y Productos bancarios vinculados a la vivienda",
+    1: "2: Línea Flex: Cuentas de ahorro con beneficios, Depósitos a corto plazo con flexibilidad, Préstamos personales con tasas bajas y Productos Bancarios Digitales",
     2: "3: Línea Platinum: Fondos de inversión diversificados, Cuenta Premium con servicios exclusivos, Seguros de vida y salud de alta gama y Planes de inversión a largo plazo o jubilación privada",
-    3: "4: Línea Starter: Cuentas de ahorro con beneficios por lealtad, Microcréditos específicos, Reestructuración de deuda (hipotecas y préstamos) y Planes de ahorro para metas específicas (ejemplo: educación de hijos)",
+    3: "4: Línea Basic: Cuentas de ahorro con beneficios por lealtad, Microcréditos específicos, Reestructuración de deuda (hipotecas y préstamos) y Planes de ahorro para metas específicas (ejemplo: educación de hijos)",
 }
 prediction = model.predict(user_data)
 perfil = perfil_map.get(int(prediction[0]), "Perfil no encontrado")
