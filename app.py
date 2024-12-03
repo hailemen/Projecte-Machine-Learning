@@ -14,7 +14,7 @@ with open('label_encoders.pkl', 'rb') as f:
     loaded_label_encoders = pickle.load(f)
 
 # Título de la aplicación
-st.title('Joonie, Luna & Doria Banking Group. Identificador de Clientes')
+st.title('Joonie, Luna & Doria Banking. Identificador de Clientes')
 
 # Datos demográficos del cliente
 st.header('Ingrese los datos demográficos del Cliente')
